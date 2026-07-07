@@ -1,0 +1,28 @@
+/* 針對條款頁面的額外微調，確保閱讀舒適度 */
+.terms-card {
+    background: #1f1f1f;
+    border: 1px solid #333;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.terms-card h2 {
+    color: #66ffcc;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.terms-card h3 {
+    margin-top: 25px;
+    color: #fff;
+}
+
+.highlight-box {
+    border-left: 4px solid #66ffcc;
+    padding-left: 15px;
+    background: rgba(102, 255, 204, 0.05);
+    margin: 20px 0;
+}
