@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111214">
+  <meta name="theme-color" content="#0d1417">
   <meta name="description" content="小喵喵是一款簡單、實用的 Discord 多功能機器人，提供管理、安全、音樂、客服單與 RPG 等功能。">
   <meta name="keywords" content="小喵喵, Discord Bot, Discord 機器人, 音樂, 管理, 安全, RPG, 遊戲">
   <meta property="og:title" content="小喵喵 Discord Bot">
@@ -17,10 +17,8 @@
   <title>小喵喵｜Discord Bot</title>
 
   <link rel="icon" href="style/cat.png" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/responsive.css">
 
 
 </head>
@@ -34,7 +32,7 @@
       </a>
 
 
-      <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-controls="mainNav" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -63,6 +61,9 @@
             <button class="btn btn-primary" data-url="invite">邀請小喵喵</button>
             <a class="btn btn-secondary" href="#features">看看功能</a>
           </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <img src="style/cat.png" alt="">
         </div>
       </div>
     </section>

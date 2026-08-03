@@ -11,23 +11,26 @@
     <meta property="og:title" content="小喵喵分身機器人模組文檔" />
     <meta property="og:description" content="小喵喵分身機器人教學文檔" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="style/cat.pngat.png">
+    <meta property="og:image" content="style/cat.png">
     <link rel="icon" href="style/cat.png" type="image/x-icon" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="style/index.css">
     <link rel="stylesheet" type="text/css" href="style/document.css">
+    <link rel="stylesheet" type="text/css" href="style/responsive.css">
 </head>
 
 <body>
-    <header>
+    <header class="document-header">
 
         <div class="container header-container">
             <div class="logo">
                 <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
                 <span style="margin-left: 8px; vertical-align: middle;">分身機器人文檔</span>
             </div>
-            <nav>
+            <button class="document-menu-toggle" type="button" aria-label="開啟章節選單" aria-controls="documentNav" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="documentNav">
                 <ul>
                     <li><a href="index.html">主頁面</a></li>
                     <li><a href="rpg-document.html">RPG開發文檔(Latest)</a></li>
@@ -50,7 +53,6 @@
 {%help%}</code></pre>
         </div>
 
-        <section id="example" class="container">
             <h2>About程式範例(內建)</h2>
             <div class="code-block">
                 <button class="copy-btn">複製</button>
@@ -59,7 +61,6 @@
 {%about%}</code></pre>
             </div>
 
-            <section id="example" class="container">
                 <h2>Meow程式範例(內建)</h2>
                 <div class="code-block">
                     <button class="copy-btn">複製</button>
@@ -188,9 +189,7 @@ end;</code></pre>
 
             <section id="invite" class="cta">
                 <h2>看完了嗎?</h2>
-                <a href="index.html">
-                    <button class="btn btn-primary">回到主頁</button>
-                </a>
+                <a class="btn btn-primary" href="index.html">回到主頁</a>
             </section>
 
 
@@ -199,6 +198,7 @@ end;</code></pre>
             </footer>
 
             <script src="script/copy.js"></script>
+            <script src="script/document-nav.js"></script>
 </body>
 
 </html>

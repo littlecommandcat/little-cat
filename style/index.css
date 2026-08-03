@@ -28,7 +28,7 @@ html {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: "Noto Sans TC", sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
