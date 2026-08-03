@@ -1,10 +1,10 @@
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) entry.target.classList.add('visible');
     });
 });
 document.querySelectorAll('section').forEach(section => observer.observe(section));
-    
+
 document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const code = btn.nextElementSibling.innerText;

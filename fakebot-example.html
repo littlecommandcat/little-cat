@@ -1,78 +1,81 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>分身機器人開發文檔</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>分身機器人開發文檔</title>
 
-  <meta name="description" content="小喵喵非常強大的分身機器人開發範例，不需要會寫程式也可以創建。" />
-  <meta name="keywords" content="小喵喵, Discord Bot, Discord 機器人, 音樂, 管理, 安全, RPG, 遊戲">
-  <meta property="og:title" content="小喵喵分身機器人模組文檔" />
-  <meta property="og:description" content="小喵喵分身機器人教學文檔" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="style/cat.pngat.png">
-  <link rel="icon" href="style/cat.png" type="image/x-icon" />
+    <meta name="description" content="小喵喵非常強大的分身機器人開發範例，不需要會寫程式也可以創建。" />
+    <meta name="keywords" content="小喵喵, Discord Bot, Discord 機器人, 音樂, 管理, 安全, RPG, 遊戲">
+    <meta property="og:title" content="小喵喵分身機器人模組文檔" />
+    <meta property="og:description" content="小喵喵分身機器人教學文檔" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="style/cat.pngat.png">
+    <link rel="icon" href="style/cat.png" type="image/x-icon" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="style/document.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <link rel="stylesheet" type="text/css" href="style/document.css">
 </head>
+
 <body>
-  <header>
+    <header>
 
-    <div class="container header-container">
-      <div class="logo">
-          <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
-          <span style="margin-left: 8px; vertical-align: middle;">分身機器人文檔</span>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">主頁面</a></li>
-          <li><a href="rpg-document.html">RPG開發文檔(Latest)</a></li>
-          <li><a href="fakebot-document.html">分身機器人開發文檔(Latest)</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
+                <span style="margin-left: 8px; vertical-align: middle;">分身機器人文檔</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">主頁面</a></li>
+                    <li><a href="rpg-document.html">RPG開發文檔(Latest)</a></li>
+                    <li><a href="fakebot-document.html">分身機器人開發文檔(Latest)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <section class="hero container">
-    <p>本頁面說明分身機器人簡易且開發者提供的範例。</p>
-  </section>
+    <section class="hero container">
+        <p>本頁面說明分身機器人簡易且開發者提供的範例。</p>
+    </section>
 
-  <section id="example" class="container">
-    <h2>Help程式範例(內建)</h2>
-    <div class="code-block">
-      <button class="copy-btn">複製</button>
-      <pre><code>// Provider: command_cat
+    <section id="example" class="container">
+        <h2>Help程式範例(內建)</h2>
+        <div class="code-block">
+            <button class="copy-btn">複製</button>
+            <pre><code>// Provider: command_cat
 
 {%help%}</code></pre>
-    </div>
+        </div>
 
-    <section id="example" class="container">
-    <h2>About程式範例(內建)</h2>
-    <div class="code-block">
-      <button class="copy-btn">複製</button>
-      <pre><code>// Provider: command_cat
+        <section id="example" class="container">
+            <h2>About程式範例(內建)</h2>
+            <div class="code-block">
+                <button class="copy-btn">複製</button>
+                <pre><code>// Provider: command_cat
 
 {%about%}</code></pre>
-    </div>
+            </div>
 
-    <section id="example" class="container">
-    <h2>Meow程式範例(內建)</h2>
-    <div class="code-block">
-      <button class="copy-btn">複製</button>
-      <pre><code>// Provider: command_cat
+            <section id="example" class="container">
+                <h2>Meow程式範例(內建)</h2>
+                <div class="code-block">
+                    <button class="copy-btn">複製</button>
+                    <pre><code>// Provider: command_cat
 
 #load &lt;message&gt;
 begin;
     username = message.username;
     output {'喵 你是**' + username + '**對吧?\n這是一個內建指令喔！'};
 end;</code></pre>
-    </div>
+                </div>
 
-    <h2>HttpCat程式範例</h2>
-    <div class="code-block">
-      <button class="copy-btn">複製</button>
-      <pre><code>// Provider: command_cat
+                <h2>HttpCat程式範例</h2>
+                <div class="code-block">
+                    <button class="copy-btn">複製</button>
+                    <pre><code>// Provider: command_cat
 
 #load &lt;message&gt;
 begin;
@@ -94,12 +97,12 @@ begin;
     endif;
     output{'https://http.cat/' + code};
 end;</code></pre>
-    </div>
+                </div>
 
-    <h2>HttpDog程式範例</h2>
-    <div class="code-block">
-      <button class="copy-btn">複製</button>
-      <pre><code>// Provider: creeperdev.me
+                <h2>HttpDog程式範例</h2>
+                <div class="code-block">
+                    <button class="copy-btn">複製</button>
+                    <pre><code>// Provider: creeperdev.me
 
 #load &lt;message&gt;
 begin;
@@ -116,10 +119,10 @@ begin;
     endtry;
     output{'https://http.dog/' + code + '.jpg'};
 end;</code></pre>
-    </div>
-    <h2>損失函式程式範例</h2>
-    <div class="code-block">
-      <pre><code>// Provider: command_cat
+                </div>
+                <h2>損失函式程式範例</h2>
+                <div class="code-block">
+                    <pre><code>// Provider: command_cat
         
 #load &lt;message&gt;
 func calculate_mse{y_true y_pred};
@@ -156,10 +159,10 @@ begin;
        output{"計算時出現錯誤\n以下為錯誤訊息\n" + error};
     endtry;
 end;</code></pre>
-    </div>
-    <h2>許願程式範例</h2>
-    <div class="code-block">
-      <pre><code>// Provider: lmr0811
+                </div>
+                <h2>許願程式範例</h2>
+                <div class="code-block">
+                    <pre><code>// Provider: lmr0811
         
 #load &lt;message&gt;
 #load &lt;time&gt;
@@ -179,22 +182,23 @@ begin;
     final_msg = final_msg + time.asctime;
     output {final_msg};
 end;</code></pre>
-    </div>
-  </section>
+                </div>
+            </section>
 
 
-  <section id="invite" class="cta">
-    <h2>看完了嗎?</h2>
-    <a href="index.html">
-      <button class="btn-primary">回到主頁</button>
-    </a>
-  </section>
+            <section id="invite" class="cta">
+                <h2>看完了嗎?</h2>
+                <a href="index.html">
+                    <button class="btn btn-primary">回到主頁</button>
+                </a>
+            </section>
 
 
-  <footer>
-    <p>© 2026 小喵喵 Discord Bot. All rights reserved.</p>
-  </footer>
+            <footer>
+                <p>© 2026 小喵喵 Discord Bot. All rights reserved.</p>
+            </footer>
 
-  <script src="script/copy.js"></script>
+            <script src="script/copy.js"></script>
 </body>
+
 </html>

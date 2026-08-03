@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,15 +15,17 @@
   <link rel="icon" href="style/cat.png" type="image/x-icon" />
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="style/index.css">
   <link rel="stylesheet" type="text/css" href="style/document.css">
 </head>
+
 <body>
   <header>
 
     <div class="container header-container">
       <div class="logo">
-          <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
-          <span style="margin-left: 8px; vertical-align: middle;">分身機器人文檔</span>
+        <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
+        <span style="margin-left: 8px; vertical-align: middle;">分身機器人文檔</span>
       </div>
       <nav>
         <ul>
@@ -63,13 +66,41 @@ begin; // 主程式開始
 end; // 主程式結束</code></pre>
     </div>
     <table>
-      <tr><th>指令/關鍵字</th><th>範例</th><th>說明</th></tr>
-      <tr><td>#load</td><td>#load &lt;math&gt;</td><td>加載外部擴充庫（如 math, message)</td></tr>
-      <tr><td>begin / end</td><td>begin; ... end;</td><td>定義程式執行的主區塊，需加分號</td></tr>
-      <tr><td>output</td><td>output {content};</td><td>設定程式最終回傳內容，僅執行一次</td></tr>
-      <tr><td>//</td><td>// 註解內容</td><td>單行註解，執行時會被忽略</td></tr>
-      <tr><td>;</td><td>res = a + b;</td><td>指令結尾必須加上分號（結構關鍵字除外）</td></tr>
-      <tr><td>try / except / endtry</td><td>try; ... except; ... endtry;</td><td>捕捉區塊內的錯誤且不使用意外終止程式</td></tr>
+      <tr>
+        <th>指令/關鍵字</th>
+        <th>範例</th>
+        <th>說明</th>
+      </tr>
+      <tr>
+        <td>#load</td>
+        <td>#load &lt;math&gt;</td>
+        <td>加載外部擴充庫（如 math, message)</td>
+      </tr>
+      <tr>
+        <td>begin / end</td>
+        <td>begin; ... end;</td>
+        <td>定義程式執行的主區塊，需加分號</td>
+      </tr>
+      <tr>
+        <td>output</td>
+        <td>output {content};</td>
+        <td>設定程式最終回傳內容，僅執行一次</td>
+      </tr>
+      <tr>
+        <td>//</td>
+        <td>// 註解內容</td>
+        <td>單行註解，執行時會被忽略</td>
+      </tr>
+      <tr>
+        <td>;</td>
+        <td>res = a + b;</td>
+        <td>指令結尾必須加上分號（結構關鍵字除外）</td>
+      </tr>
+      <tr>
+        <td>try / except / endtry</td>
+        <td>try; ... except; ... endtry;</td>
+        <td>捕捉區塊內的錯誤且不使用意外終止程式</td>
+      </tr>
     </table>
   </section>
 
@@ -112,7 +143,7 @@ endif;</code></pre>
   <section id="functions" class="container">
     <h2>函式 (Function Definition)</h2>
     <p>使用 <code>func</code> 封裝重複邏輯。所有自定義函式必須定義在 <code>begin</code> 區塊之前。</p>
-    
+
     <div class="grid">
       <div class="card code-block">
         <h3>函式定義語法</h3>
@@ -147,10 +178,10 @@ end;</code></pre>
   <section id="method" class="container">
     <h2>方法 (Method)</h2>
     <p>使用 <code>method</code> 封裝應用邏輯。<b>不可由使用者自訂。</b></p>
-      <div class="card code-block">
-        <h3>如何調用方法</h3>
-        <button class="copy-btn">複製</button>
-        <pre><code>begin;
+    <div class="card code-block">
+      <h3>如何調用方法</h3>
+      <button class="copy-btn">複製</button>
+      <pre><code>begin;
   // 不須使用 call 關鍵字調用
   wait{0.2}; // 等待0.2秒
   val1 = min{1 2}; // 取兩者最小值
@@ -158,7 +189,7 @@ end;</code></pre>
   val3 = abs{-5}; // 取數值之絕對值
   output {}; // 必要輸出
 end;</code></pre>
-      </div>
+    </div>
     </div>
 
     <div class="warning-card">
@@ -175,65 +206,289 @@ end;</code></pre>
   <section id="libs-variables" class="container">
     <h2>內建庫與函數註冊</h2>
     <table>
-      <tr><th>類別</th><th>函數/屬性</th><th>回傳型態</th><th>類型</th><th>說明</th></tr>
-      <tr><td rowspan="4">
-        <b>math (library)</b>
-          </td><td>math.pi / math.e</td><td>float</td><td>variable</td><td>圓周率與自然常數</td></tr>
-          <tr><td>math.add{a b}</td><td>float</td><td><a href="#functions">function</a></td><td>回傳 a + b 的結果</td></tr>
-          <tr><td>math.multiple{a b}</td><td>float</td><td><a href="#functions">function</a></td><td>回傳 a * b 的結果</td></tr>
-          <tr><td>math.subtruct{a b}</td><td>float</td><td><a href="#functions">function</a></td><td>回傳 a - b 的結果</td></tr>
-      <tr><td rowspan="7">
-        <b>message (library)</b>
-          </td><td>message.username</td><td>str</td><td>variable</td><td>訊息作者名稱</td></tr>
-          <tr><td>message.userid</td><td>int</td><td>variable</td><td>訊息作者 ID</td></tr>
-          <tr><td>message.id</td><td>int</td><td>variable</td><td>訊息 ID</td></tr>
-          <tr><td>message.content</td><td>str</td><td>variable</td><td>觸發程式的訊息內容</td></tr>
-          <tr><td>message.createat</td><td>float</td><td>variable</td><td>訊息發送時間</td></tr>
-          <tr><td>message.prefix</td><td>str</td><td>variable</td><td>指令前綴字</td></tr>
-          <tr><td>message.command</td><td>str</td><td>variable</td><td>指令名稱</td></tr>
-      <tr><td rowspan="2">
-        <b>requests (library)</b>
-          </td><td>requests.get{url headers params}</td><td>data</td><td><a href="#functions">function</a></td><td>進行get並附帶headers和params</td></tr>
-          <tr><td>requests.post{url headers json}</td><td>data</td><td><a href="#functions">function</a></td><td>進行post並附帶headers和json</td></tr>
-      <tr><td rowspan="3">
-        <b>time (library)</b>
-          </td><td>time.timestamp</td><td>float</td><td>variable</td><td>取得目前的timestamp</td></tr>
-          <tr><td>time.asctime</td><td>str</td><td>variable</td><td>取得目前的asctime</td></tr>
-          <tr><td>time.today</td><td>str</td><td>variable</td><td>取得目前的strtime</td></tr>
-      <tr><td rowspan="6">
-        <b>list</b>
-          </td><td>list.add{list val}</td><td>none</td><td><a href="#method">method</a></td><td>在列表末尾新增一個元素</td></tr>
-          <tr><td>list.pop{list idx}</td><td>none</td><td><a href="#method">method</a></td><td>移除並回傳指定索引的元素</td></tr>
-          <tr><td>list.get{list idx}</td><td>any</td><td><a href="#method">method</a></td><td>取得指定索引的元素內容</td></tr>
-          <tr><td>list.count{list str}</td><td>int</td><td><a href="#method">method</a></td><td>取得指定元素的數量</td></tr>
-          <tr><td>list.length{list}</td><td>int</td><td><a href="#method">method</a></td><td>取得列表總長度</td></tr>
-          <tr><td>list.random{list n}</td><td>list</td><td><a href="#method">method</a></td><td>隨機抽取 n 個元素 (n 可省略)</td></tr>
-      <tr><td rowspan="7">
-        <b>dict</b>
-          </td><td>dict.set{dict key item}</td><td>none</td><td><a href="#method">method</a></td><td>在字典設定 key: items</td></tr>
-          </td><td>dict.clear{dict}</td><td>none</td><td><a href="#method">method</a></td><td>清除整個字典</td></tr>
-          <tr><td>dict.get{dict key}</td><td>any</td><td><a href="#method">method</a></td><td>回傳指定key的item</td></tr>
-          <tr><td>dict.length{dict}</td><td>int</td><td><a href="#method">method</a></td><td>回傳字典長度</td></tr>
-          <tr><td>dict.randomkeys{dict n}</td><td>any</td><td><a href="#method">method</a></td><td>隨機從key抽取 n 個元素 (n 可省略)</td></tr>
-          <tr><td>dict.randomitems{dict n}</td><td>any</td><td><a href="#method">method</a></td><td>隨機從item抽取 n 個元素 (n 可省略)</td></tr>
-          <tr><td>dict.del{dict key}</td><td>any</td><td><a href="#method">method</a></td><td>刪除指定key</td></tr>
-      <tr><td rowspan="6">
-        <b>string</b>
-          </td><td>str.upper{text}</td><td>str</td><td><a href="#method">method</a></td><td>轉為全大寫</td></tr>
-          <tr><td>str.lower{text}</td><td>str</td><td><a href="#method">method</a></td><td>轉為全小寫</td></tr>
-          <tr><td>str.title{text}</td><td>str</td><td><a href="#method">method</a></td><td>開頭轉為大寫</td></tr>
-          <tr><td>str.length{text}</td><td>int</td><td><a href="#method">method</a></td><td>計算字串長度</td></tr>
-          <tr><td>str.replace{text a b}</td><td>list</td><td><a href="#method">method</a></td><td>以指定文字a取代文字b</td></tr>
-          <tr><td>str.split{text sep}</td><td>list</td><td><a href="#method">method</a></td><td>以指定字串分割文字</td></tr>
-      <tr><td rowspan="7">
-        <b>system</b>
-          </td><td>turntype{val type}</td><td>any</td><td><a href="#method">method</a></td><td>轉換型態 (str, int, float, list)</td></tr>
-          <tr><td>type{val}</td><td>str</td><td><a href="#method">method</a></td><td>確認變數型態</td></tr>
-          <tr><td>wait{time}</td><td>none</td><td><a href="#method">method</a></td><td>暫停執行 (限制 0.1 ~ 0.5 秒)</td></tr>
-          <tr><td>min{val val}</td><td>float</td><td><a href="#method">method</a></td><td>取兩者最小值</td></tr>
-          <tr><td>max{val val}</td><td>float</td><td><a href="#method">method</a></td><td>取兩者最大值</td></tr>
-          <tr><td>abs{val}</td><td>float</td><td><a href="#method">method</a></td><td>取數值之絕對值</td></tr>
-          <tr><td>round{val val}</td><td>float</td><td><a href="#method">method</a></td><td>取數值val後五捨六入</td></tr>
+      <tr>
+        <th>類別</th>
+        <th>函數/屬性</th>
+        <th>回傳型態</th>
+        <th>類型</th>
+        <th>說明</th>
+      </tr>
+      <tr>
+        <td rowspan="4">
+          <b>math (library)</b>
+        </td>
+        <td>math.pi / math.e</td>
+        <td>float</td>
+        <td>variable</td>
+        <td>圓周率與自然常數</td>
+      </tr>
+      <tr>
+        <td>math.add{a b}</td>
+        <td>float</td>
+        <td><a href="#functions">function</a></td>
+        <td>回傳 a + b 的結果</td>
+      </tr>
+      <tr>
+        <td>math.multiple{a b}</td>
+        <td>float</td>
+        <td><a href="#functions">function</a></td>
+        <td>回傳 a * b 的結果</td>
+      </tr>
+      <tr>
+        <td>math.subtruct{a b}</td>
+        <td>float</td>
+        <td><a href="#functions">function</a></td>
+        <td>回傳 a - b 的結果</td>
+      </tr>
+      <tr>
+        <td rowspan="7">
+          <b>message (library)</b>
+        </td>
+        <td>message.username</td>
+        <td>str</td>
+        <td>variable</td>
+        <td>訊息作者名稱</td>
+      </tr>
+      <tr>
+        <td>message.userid</td>
+        <td>int</td>
+        <td>variable</td>
+        <td>訊息作者 ID</td>
+      </tr>
+      <tr>
+        <td>message.id</td>
+        <td>int</td>
+        <td>variable</td>
+        <td>訊息 ID</td>
+      </tr>
+      <tr>
+        <td>message.content</td>
+        <td>str</td>
+        <td>variable</td>
+        <td>觸發程式的訊息內容</td>
+      </tr>
+      <tr>
+        <td>message.createat</td>
+        <td>float</td>
+        <td>variable</td>
+        <td>訊息發送時間</td>
+      </tr>
+      <tr>
+        <td>message.prefix</td>
+        <td>str</td>
+        <td>variable</td>
+        <td>指令前綴字</td>
+      </tr>
+      <tr>
+        <td>message.command</td>
+        <td>str</td>
+        <td>variable</td>
+        <td>指令名稱</td>
+      </tr>
+      <tr>
+        <td rowspan="2">
+          <b>requests (library)</b>
+        </td>
+        <td>requests.get{url headers params}</td>
+        <td>data</td>
+        <td><a href="#functions">function</a></td>
+        <td>進行get並附帶headers和params</td>
+      </tr>
+      <tr>
+        <td>requests.post{url headers json}</td>
+        <td>data</td>
+        <td><a href="#functions">function</a></td>
+        <td>進行post並附帶headers和json</td>
+      </tr>
+      <tr>
+        <td rowspan="3">
+          <b>time (library)</b>
+        </td>
+        <td>time.timestamp</td>
+        <td>float</td>
+        <td>variable</td>
+        <td>取得目前的timestamp</td>
+      </tr>
+      <tr>
+        <td>time.asctime</td>
+        <td>str</td>
+        <td>variable</td>
+        <td>取得目前的asctime</td>
+      </tr>
+      <tr>
+        <td>time.today</td>
+        <td>str</td>
+        <td>variable</td>
+        <td>取得目前的strtime</td>
+      </tr>
+      <tr>
+        <td rowspan="6">
+          <b>list</b>
+        </td>
+        <td>list.add{list val}</td>
+        <td>none</td>
+        <td><a href="#method">method</a></td>
+        <td>在列表末尾新增一個元素</td>
+      </tr>
+      <tr>
+        <td>list.pop{list idx}</td>
+        <td>none</td>
+        <td><a href="#method">method</a></td>
+        <td>移除並回傳指定索引的元素</td>
+      </tr>
+      <tr>
+        <td>list.get{list idx}</td>
+        <td>any</td>
+        <td><a href="#method">method</a></td>
+        <td>取得指定索引的元素內容</td>
+      </tr>
+      <tr>
+        <td>list.count{list str}</td>
+        <td>int</td>
+        <td><a href="#method">method</a></td>
+        <td>取得指定元素的數量</td>
+      </tr>
+      <tr>
+        <td>list.length{list}</td>
+        <td>int</td>
+        <td><a href="#method">method</a></td>
+        <td>取得列表總長度</td>
+      </tr>
+      <tr>
+        <td>list.random{list n}</td>
+        <td>list</td>
+        <td><a href="#method">method</a></td>
+        <td>隨機抽取 n 個元素 (n 可省略)</td>
+      </tr>
+      <tr>
+        <td rowspan="7">
+          <b>dict</b>
+        </td>
+        <td>dict.set{dict key item}</td>
+        <td>none</td>
+        <td><a href="#method">method</a></td>
+        <td>在字典設定 key: items</td>
+      </tr>
+      </td>
+      <td>dict.clear{dict}</td>
+      <td>none</td>
+      <td><a href="#method">method</a></td>
+      <td>清除整個字典</td>
+      </tr>
+      <tr>
+        <td>dict.get{dict key}</td>
+        <td>any</td>
+        <td><a href="#method">method</a></td>
+        <td>回傳指定key的item</td>
+      </tr>
+      <tr>
+        <td>dict.length{dict}</td>
+        <td>int</td>
+        <td><a href="#method">method</a></td>
+        <td>回傳字典長度</td>
+      </tr>
+      <tr>
+        <td>dict.randomkeys{dict n}</td>
+        <td>any</td>
+        <td><a href="#method">method</a></td>
+        <td>隨機從key抽取 n 個元素 (n 可省略)</td>
+      </tr>
+      <tr>
+        <td>dict.randomitems{dict n}</td>
+        <td>any</td>
+        <td><a href="#method">method</a></td>
+        <td>隨機從item抽取 n 個元素 (n 可省略)</td>
+      </tr>
+      <tr>
+        <td>dict.del{dict key}</td>
+        <td>any</td>
+        <td><a href="#method">method</a></td>
+        <td>刪除指定key</td>
+      </tr>
+      <tr>
+        <td rowspan="6">
+          <b>string</b>
+        </td>
+        <td>str.upper{text}</td>
+        <td>str</td>
+        <td><a href="#method">method</a></td>
+        <td>轉為全大寫</td>
+      </tr>
+      <tr>
+        <td>str.lower{text}</td>
+        <td>str</td>
+        <td><a href="#method">method</a></td>
+        <td>轉為全小寫</td>
+      </tr>
+      <tr>
+        <td>str.title{text}</td>
+        <td>str</td>
+        <td><a href="#method">method</a></td>
+        <td>開頭轉為大寫</td>
+      </tr>
+      <tr>
+        <td>str.length{text}</td>
+        <td>int</td>
+        <td><a href="#method">method</a></td>
+        <td>計算字串長度</td>
+      </tr>
+      <tr>
+        <td>str.replace{text a b}</td>
+        <td>list</td>
+        <td><a href="#method">method</a></td>
+        <td>以指定文字a取代文字b</td>
+      </tr>
+      <tr>
+        <td>str.split{text sep}</td>
+        <td>list</td>
+        <td><a href="#method">method</a></td>
+        <td>以指定字串分割文字</td>
+      </tr>
+      <tr>
+        <td rowspan="7">
+          <b>system</b>
+        </td>
+        <td>turntype{val type}</td>
+        <td>any</td>
+        <td><a href="#method">method</a></td>
+        <td>轉換型態 (str, int, float, list)</td>
+      </tr>
+      <tr>
+        <td>type{val}</td>
+        <td>str</td>
+        <td><a href="#method">method</a></td>
+        <td>確認變數型態</td>
+      </tr>
+      <tr>
+        <td>wait{time}</td>
+        <td>none</td>
+        <td><a href="#method">method</a></td>
+        <td>暫停執行 (限制 0.1 ~ 0.5 秒)</td>
+      </tr>
+      <tr>
+        <td>min{val val}</td>
+        <td>float</td>
+        <td><a href="#method">method</a></td>
+        <td>取兩者最小值</td>
+      </tr>
+      <tr>
+        <td>max{val val}</td>
+        <td>float</td>
+        <td><a href="#method">method</a></td>
+        <td>取兩者最大值</td>
+      </tr>
+      <tr>
+        <td>abs{val}</td>
+        <td>float</td>
+        <td><a href="#method">method</a></td>
+        <td>取數值之絕對值</td>
+      </tr>
+      <tr>
+        <td>round{val val}</td>
+        <td>float</td>
+        <td><a href="#method">method</a></td>
+        <td>取數值val後五捨六入</td>
+      </tr>
     </table>
   </section>
 
@@ -296,7 +551,7 @@ end;</code></pre>
   <section id="invite" class="cta">
     <h2>準備好開始使用了嗎？</h2>
     <a href="fakebot-example.html">
-      <button class="btn-primary">公開範例</button>
+      <button class="btn btn-primary">公開範例</button>
     </a>
   </section>
 
@@ -308,4 +563,5 @@ end;</code></pre>
   <script src="script/redirect.js"></script>
   <script src="script/copy.js"></script>
 </body>
+
 </html>

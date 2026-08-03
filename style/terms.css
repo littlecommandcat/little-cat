@@ -1,3 +1,7 @@
+nav li {
+    list-style: none;
+}
+
 .terms-card {
     margin-bottom: 18px;
     padding: 36px 40px;

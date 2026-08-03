@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,16 +17,17 @@
   <!-- <img src="style/cat.png"> -->
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
+  <link rel="stylesheet" type="text/css" href="style/index.css">
   <link rel="stylesheet" type="text/css" href="style/document.css">
 </head>
+
 <body>
 
   <header>
     <div class="container header-container">
       <div class="logo">
-          <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
-          <span style="margin-left: 8px; vertical-align: middle;">RPG模組文檔</span>
+        <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
+        <span style="margin-left: 8px; vertical-align: middle;">RPG模組文檔</span>
       </div>
       <nav>
         <ul>
@@ -45,7 +47,7 @@
 
   <section class="hero container">
     <!-- <h1>小喵喵RPG模組文檔</h1> -->
-    <p>本頁面說明小喵喵RPG模組JSON結構、必填與可選欄位，以及生物/方塊生成規則。<br>此版本為v1.5-latest</p>
+    <p>本頁面說明小喵喵RPG模組JSON結構、必填與可選欄位，以及生物/方塊生成規則。</p>
 
   </section>
 
@@ -57,10 +59,26 @@
       <li>視野大小為5x5</li>
       <li>打獵計算公式：</li>
       <table>
-        <tr><th>運用</th><th>型態</th><th>計算公式</th></tr>
-        <tr><td>玩家攻擊力</td><td>int</td><td>玩家等級 * 0.6 + 攻擊加成 * 1.6</td></tr>
-        <tr><td>隨機值</td><td>float</td><td>0.6 ~ 1.1</td></tr>
-        <tr><td>怪物血量</td><td>float</td><td>玩家等級 * 隨機值 ~ 隨機值 * 1.5</td></tr>
+        <tr>
+          <th>運用</th>
+          <th>型態</th>
+          <th>計算公式</th>
+        </tr>
+        <tr>
+          <td>玩家攻擊力</td>
+          <td>int</td>
+          <td>玩家等級 * 0.6 + 攻擊加成 * 1.6</td>
+        </tr>
+        <tr>
+          <td>隨機值</td>
+          <td>float</td>
+          <td>0.6 ~ 1.1</td>
+        </tr>
+        <tr>
+          <td>怪物血量</td>
+          <td>float</td>
+          <td>玩家等級 * 隨機值 ~ 隨機值 * 1.5</td>
+        </tr>
       </table>
       <li>開發模式並不會影響一般玩家的資料</a></li>
     </ul>
@@ -90,17 +108,61 @@
 }</code></pre>
     </div>
     <table>
-      <tr><th>欄位</th><th>型態</th><th>說明</th></tr>
-      <tr><td>info.author</td><td>str</td><td>作者名稱</td></tr>
-      <tr><td>info.modname</td><td>str</td><td>模組名稱</td></tr>
-      <tr><td>info.modversion</td><td>str</td><td>模組版本</td></tr>
-      <tr><td>data.animal</td><td>dict</td><td>生物資料</td></tr>
-      <tr><td>data.block</td><td>dict</td><td>方塊資料</td></tr>
-      <tr><td>data.item</td><td>dict</td><td>物品資料</td></tr>
-      <tr><td>rule.animal</td><td>dict</td><td>生物生成規則</td></tr>
-      <tr><td>rule.block</td><td>dict</td><td>方塊生成規則</td></tr>
-      <tr><td>type</td><td>list</td><td>類型註冊列表(預設類型：default、food)</td></tr>
-      <tr><td>events</td><td>dict</td><td>事件註冊列表(預設事件請查看<a href="#new-event">事件說明與註冊</a>)</td></tr>
+      <tr>
+        <th>欄位</th>
+        <th>型態</th>
+        <th>說明</th>
+      </tr>
+      <tr>
+        <td>info.author</td>
+        <td>str</td>
+        <td>作者名稱</td>
+      </tr>
+      <tr>
+        <td>info.modname</td>
+        <td>str</td>
+        <td>模組名稱</td>
+      </tr>
+      <tr>
+        <td>info.modversion</td>
+        <td>str</td>
+        <td>模組版本</td>
+      </tr>
+      <tr>
+        <td>data.animal</td>
+        <td>dict</td>
+        <td>生物資料</td>
+      </tr>
+      <tr>
+        <td>data.block</td>
+        <td>dict</td>
+        <td>方塊資料</td>
+      </tr>
+      <tr>
+        <td>data.item</td>
+        <td>dict</td>
+        <td>物品資料</td>
+      </tr>
+      <tr>
+        <td>rule.animal</td>
+        <td>dict</td>
+        <td>生物生成規則</td>
+      </tr>
+      <tr>
+        <td>rule.block</td>
+        <td>dict</td>
+        <td>方塊生成規則</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>list</td>
+        <td>類型註冊列表(預設類型：default、food)</td>
+      </tr>
+      <tr>
+        <td>events</td>
+        <td>dict</td>
+        <td>事件註冊列表(預設事件請查看<a href="#new-event">事件說明與註冊</a>)</td>
+      </tr>
     </table>
   </section>
 
@@ -143,20 +205,76 @@
       </div>
     </div>
     <table>
-      <tr><th>欄位</th><th>型態</th><th>說明</th></tr>
-      <tr><td>&lt;生物名稱&gt;.hp</td><td>int</td><td>生物血量</td></tr>
-      <tr><td>&lt;生物名稱&gt;.drops</td><td>list</td><td>掉落物</td></tr>
-      <tr><td>&lt;生物名稱&gt;.display-emoji</td><td>str</td><td>顯示的表情符號</td></tr>
-      <tr><td>&lt;方塊名稱&gt;.drops</td><td>list</td><td>掉落物</td></tr>
-      <tr><td>&lt;方塊名稱&gt;.display-emoji</td><td>str</td><td>顯示的表情符號</td></tr>
-      <tr><td>&lt;方塊名稱&gt;.events</td><td>list</td><td>觸發事件(可不填)</td></tr>
-      <tr><td>&lt;物品名稱&gt;.type</td><td>list</td><td>物品屬性(food為食物)</td></tr>
-      <tr><td>&lt;物品名稱&gt;.gen</td><td>dict</td><td>物品食物屬性(非食物不填)</td></tr>
-      <tr><td>&lt;物品名稱&gt;.gen.health</td><td>int</td><td>食物回復血量</td></tr>
-      <tr><td>&lt;物品名稱&gt;.gen.cooked</td><td>bool</td><td>食物是否烹煮(不烹煮或已烹煮為True)</td></tr>
-      <tr><td>&lt;物品名稱&gt;.trade</td><td>dict</td><td>物品交易</td></tr>
-      <tr><td>&lt;物品名稱&gt;.trade.sold</td><td>int</td><td>物品售出價格</td></tr>
-      <tr><td>&lt;物品名稱&gt;.trade.buy</td><td>int</td><td>物品買入價格</td></tr>
+      <tr>
+        <th>欄位</th>
+        <th>型態</th>
+        <th>說明</th>
+      </tr>
+      <tr>
+        <td>&lt;生物名稱&gt;.hp</td>
+        <td>int</td>
+        <td>生物血量</td>
+      </tr>
+      <tr>
+        <td>&lt;生物名稱&gt;.drops</td>
+        <td>list</td>
+        <td>掉落物</td>
+      </tr>
+      <tr>
+        <td>&lt;生物名稱&gt;.display-emoji</td>
+        <td>str</td>
+        <td>顯示的表情符號</td>
+      </tr>
+      <tr>
+        <td>&lt;方塊名稱&gt;.drops</td>
+        <td>list</td>
+        <td>掉落物</td>
+      </tr>
+      <tr>
+        <td>&lt;方塊名稱&gt;.display-emoji</td>
+        <td>str</td>
+        <td>顯示的表情符號</td>
+      </tr>
+      <tr>
+        <td>&lt;方塊名稱&gt;.events</td>
+        <td>list</td>
+        <td>觸發事件(可不填)</td>
+      </tr>
+      <tr>
+        <td>&lt;物品名稱&gt;.type</td>
+        <td>list</td>
+        <td>物品屬性(food為食物)</td>
+      </tr>
+      <tr>
+        <td>&lt;物品名稱&gt;.gen</td>
+        <td>dict</td>
+        <td>物品食物屬性(非食物不填)</td>
+      </tr>
+      <tr>
+        <td>&lt;物品名稱&gt;.gen.health</td>
+        <td>int</td>
+        <td>食物回復血量</td>
+      </tr>
+      <tr>
+        <td>&lt;物品名稱&gt;.gen.cooked</td>
+        <td>bool</td>
+        <td>食物是否烹煮(不烹煮或已烹煮為True)</td>
+      </tr>
+      <tr>
+        <td>&lt;物品名稱&gt;.trade</td>
+        <td>dict</td>
+        <td>物品交易</td>
+      </tr>
+      <tr>
+        <td>&lt;物品名稱&gt;.trade.sold</td>
+        <td>int</td>
+        <td>物品售出價格</td>
+      </tr>
+      <tr>
+        <td>&lt;物品名稱&gt;.trade.buy</td>
+        <td>int</td>
+        <td>物品買入價格</td>
+      </tr>
     </table>
   </section>
 
@@ -186,13 +304,41 @@
       </div>
     </div>
     <table>
-      <tr><th>欄位</th><th>型態</th><th>說明</th></tr>
-      <tr><td>&lt;生物名稱&gt;.chunk</td><td>dict</td><td>區塊生成規則</td></tr>
-      <tr><td>&lt;生物名稱&gt;.chunk.max</td><td>int</td><td>區塊最多生成數量</td></tr>
-      <tr><td>&lt;生物名稱&gt;.type</td><td>list</td><td>生物屬性</td></tr>
-      <tr><td>&lt;方塊名稱&gt;.chunk</td><td>dict</td><td>區塊生成規則</td></tr>
-      <tr><td>&lt;方塊名稱&gt;.chunk.max</td><td>int</td><td>區塊最多生成數量</td></tr>
-      <tr><td>&lt;方塊名稱&gt;.type</td><td>list</td><td>方塊屬性</td></tr>
+      <tr>
+        <th>欄位</th>
+        <th>型態</th>
+        <th>說明</th>
+      </tr>
+      <tr>
+        <td>&lt;生物名稱&gt;.chunk</td>
+        <td>dict</td>
+        <td>區塊生成規則</td>
+      </tr>
+      <tr>
+        <td>&lt;生物名稱&gt;.chunk.max</td>
+        <td>int</td>
+        <td>區塊最多生成數量</td>
+      </tr>
+      <tr>
+        <td>&lt;生物名稱&gt;.type</td>
+        <td>list</td>
+        <td>生物屬性</td>
+      </tr>
+      <tr>
+        <td>&lt;方塊名稱&gt;.chunk</td>
+        <td>dict</td>
+        <td>區塊生成規則</td>
+      </tr>
+      <tr>
+        <td>&lt;方塊名稱&gt;.chunk.max</td>
+        <td>int</td>
+        <td>區塊最多生成數量</td>
+      </tr>
+      <tr>
+        <td>&lt;方塊名稱&gt;.type</td>
+        <td>list</td>
+        <td>方塊屬性</td>
+      </tr>
     </table>
   </section>
 
@@ -210,10 +356,26 @@
       </div>
     </div>
     <table>
-      <tr><th>欄位</th><th>型態</th><th>說明</th></tr>
-      <tr><td>&lt;事件名稱&gt;.core</td><td>str</td><td>引用核心事件：de-health或in-health</td></tr>
-      <tr><td>預設事件</td><td>str</td><td>不須註冊即可使用的預設事件：explode、hurt、recover</td></tr>
-      <tr><td>core</td><td>str</td><td>de-health、in-health請則一輸入 &lt;事件名稱&gt;.core 使用</td></tr>
+      <tr>
+        <th>欄位</th>
+        <th>型態</th>
+        <th>說明</th>
+      </tr>
+      <tr>
+        <td>&lt;事件名稱&gt;.core</td>
+        <td>str</td>
+        <td>引用核心事件：de-health或in-health</td>
+      </tr>
+      <tr>
+        <td>預設事件</td>
+        <td>str</td>
+        <td>不須註冊即可使用的預設事件：explode、hurt、recover</td>
+      </tr>
+      <tr>
+        <td>core</td>
+        <td>str</td>
+        <td>de-health、in-health請則一輸入 &lt;事件名稱&gt;.core 使用</td>
+      </tr>
     </table>
   </section>
 
@@ -372,7 +534,7 @@
 
   <section class="cta">
     <h2>開始創建你的RPG模組吧！</h2>
-    <a class="btn-primary" href="#example">立即使用範例</a>
+    <a class="btn btn-primary" href="#example">立即使用範例</a>
   </section>
 
   <footer>
@@ -382,4 +544,5 @@
   <script src="script/copy.js"></script>
 
 </body>
+
 </html>
