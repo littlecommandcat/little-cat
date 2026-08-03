@@ -1,28 +1,155 @@
-/* 針對條款頁面的額外微調，確保閱讀舒適度 */
 .terms-card {
-    background: #1f1f1f;
-    border: 1px solid #333;
-    padding: 40px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    line-height: 1.8;
+    margin-bottom: 18px;
+    padding: 36px 40px;
+    background: #1c1e21;
+    border: 1px solid #2a2d32;
+    border-radius: 14px;
+    line-height: 1.85;
 }
 
 .terms-card h2 {
-    color: #66ffcc;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
+    margin: 0 0 28px;
+    padding-bottom: 16px;
+    color: #f1f1f1;
+    border-bottom: 1px solid #2a2d32;
+    font-size: 1.5rem;
+    line-height: 1.4;
 }
 
 .terms-card h3 {
-    margin-top: 25px;
-    color: #fff;
+    margin: 36px 0 12px;
+    color: #f1f1f1;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.terms-card p {
+    margin: 0 0 14px;
+    color: #a8abb2;
+    font-size: .9rem;
+}
+
+.terms-card strong {
+    color: #dedfe1;
+    font-weight: 600;
+}
+
+.terms-card ul {
+    margin: 12px 0 20px;
+    padding-left: 22px;
+    color: #a8abb2;
+}
+
+.terms-card li {
+    margin: 7px 0;
+    padding-left: 4px;
+    font-size: .9rem;
+}
+
+.terms-card li::marker {
+    color: #d7b98e;
 }
 
 .highlight-box {
-    border-left: 4px solid #66ffcc;
-    padding-left: 15px;
-    background: rgba(102, 255, 204, 0.05);
-    margin: 20px 0;
+    margin: 24px 0;
+    padding: 16px 18px;
+    background: rgba(215, 185, 142, .06);
+    border: 1px solid rgba(215, 185, 142, .16);
+    border-left: 3px solid #d7b98e;
+    border-radius: 8px;
+}
+
+.highlight-box p {
+    margin: 0;
+    color: #c4c6ca;
+}
+
+.terms-card a {
+    color: #d7b98e;
+    transition: color .2s;
+}
+
+.terms-card a:hover {
+    color: #e3c9a4;
+}
+
+#inviteBtnBottom {
+    min-height: 46px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 9px;
+    color: #151515;
+    background: #d7b98e;
+    font: inherit;
+    font-size: .92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+#inviteBtnBottom:hover {
+    background: #e3c9a4;
+    transform: translateY(-1px);
+}
+
+#inviteBtnBottom:focus-visible {
+    outline: 2px solid #d7b98e;
+    outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+    .terms-card {
+        padding: 26px 22px;
+        border-radius: 12px;
+        line-height: 1.8;
+    }
+
+
+    .terms-card h2 {
+        margin-bottom: 24px;
+        padding-bottom: 14px;
+        font-size: 1.3rem;
+    }
+
+    .terms-card h3 {
+        margin-top: 30px;
+        font-size: 1rem;
+    }
+
+    .terms-card p,
+    .terms-card li {
+        font-size: .86rem;
+    }
+
+    .terms-card ul {
+        padding-left: 20px;
+    }
+
+    .highlight-box {
+        padding: 14px 15px;
+    }
+
+
+}
+
+@media (max-width: 450px) {
+    .terms-card {
+        padding: 22px 17px;
+    }
+
+
+    .terms-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .terms-card h3 {
+        margin-top: 26px;
+    }
+
+    .terms-card p,
+    .terms-card li {
+        font-size: .84rem;
+    }
+
+
 }

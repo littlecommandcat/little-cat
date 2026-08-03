@@ -1,99 +1,287 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>小喵喵Discord機器人</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111214">
+  <meta name="description" content="小喵喵是一款簡單、實用的 Discord 多功能機器人，提供管理、安全、音樂、客服單與 RPG 等功能。">
+  <meta name="keywords" content="小喵喵, Discord Bot, Discord 機器人, 音樂, 管理, 安全, RPG, 遊戲">
+  <meta property="og:title" content="小喵喵 Discord Bot">
+  <meta property="og:description" content="讓 Discord 伺服器管理更簡單。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="style/cat.png">
 
-  <meta name="description" content="小喵喵是一款強大的 Discord 機器人，支援跨群語音、音樂播放、管理功能、客服單與安全系統。" />
-  <meta name="keywords" content="小喵喵, discord, discord bot, 音樂, music, antinuke, safty, littlecat, guild, chat, voice" />
-  <meta property="og:title" content="小喵喵 Discord Bot" />
-  <meta property="og:description" content="音樂、管理、安全、跨群功能集一身的多功能機器人。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="cat.png">
-  <link rel="icon" href="cat.png" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="style/index.css">
+
+  <title>小喵喵｜Discord Bot</title>
+
+  <link rel="icon" href="style/cat.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/index.css">
+
+
 </head>
+
 <body>
-
-  <header>
+  <header class="site-header">
     <div class="container header-container">
-      <div class="logo">
-        <img src="cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
-        <span style="margin-left: 8px; vertical-align: middle;">小喵喵</span>
-      </div>
+      <a class="logo" href="#">
+        <img src="style/cat.png" alt="小喵喵">
+        <span>小喵喵</span>
+      </a>
 
-      <nav>
-        <ul>
-          <!-- <li><a href="#about">關於</a></li> -->
-          <li><a href="#features">功能</a></li>
-          <li><a href="bot-terms.html">條款政策</a></li>
-          <li><a href="#invite">邀請</a></li>
-          <li><a href="rpg-development-document-v1.5.html">RPG開發文檔(Latest)</a></li>
-          <li><a href="fakebot-development-document.html">分身機器人開發文檔(Latest)</a></li>
-        </ul>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="mainNav">
+        <a href="#features">功能</a>
+        <a href="#feedback">用戶評價</a>
+        <a href="bot-terms.html">條款政策</a>
+        <a href="rpg-document.html">RPG 文檔</a>
+        <a href="fakebot-document.html">分身機器人</a>
+        <a class="nav-invite" href="#invite">邀請小喵喵</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>提升你的 Discord 伺服器體驗</h1>
-      <p>音樂、管理、客服單、安全驗證與多人遊戲等多功能</p>
-      <button class="btn-primary" id="inviteBtn">立即邀請小喵喵</button>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="eyebrow">Discord 多功能機器人</span>
+          <h1>讓你的伺服器，<br><span>簡單一點。</span></h1>
+          <p>小喵喵提供管理、安全、音樂、客服單與 RPG 等功能，把常用工具放在一個地方。</p>
 
-  <div class="widget-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 15px;">
-    <iframe src="https://dctw.xyz/widget/b/1144161789832069141?theme=dark" width="350" height="276" loading="lazy" style="border: none; border-radius: 20px; background: transparent; overflow: hidden;"></iframe>
-    <iframe src="https://dctw.xyz/widget/s/1061475265924038758?theme=dark" width="350" height="256" loading="lazy" style="border: none; border-radius: 20px; background: transparent; overflow: hidden;"></iframe>
-  </div>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-url="invite">邀請小喵喵</button>
+            <a class="btn btn-secondary" href="#features">看看功能</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section id="features" class="features container">
-    <h2>🌟 主要功能</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>💫 分身機器人</h3>
-        <p>創建一台分身機器人，用簡單的程式進行控制。</p><br/><a href="fakebot-development-document.html">開發文檔(Latest)</a></p>
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <strong>多功能</strong>
+          <span>管理、娛樂與安全</span>
+        </div>
+        <div class="stat">
+          <strong>簡單操作</strong>
+          <span>降低伺服器管理負擔</span>
+        </div>
+        <div class="stat">
+          <strong>持續更新</strong>
+          <span>功能與體驗持續改善</span>
+        </div>
       </div>
-      <div class="card">
-        <h3>🎵 音樂播放</h3>
-        <p>YouTube/Spotify/SoundCloud高品質音樂與多種特效播放。</p>
-      </div>
-      <div class="card">
-        <h3>📋 黑名單系統</h3>
-        <p>與其他千群以上的機器人共用之黑名單，為伺服器防禦危險用戶與機器人。</p>
-      </div>
-      <div class="card">
-        <h3>📌 管理工具</h3>
-        <p>封鎖、審核紀錄等一站式伺服器管理。</p>
-      </div>
-      <div class="card">
-        <h3>📥 客服單系統</h3>
-        <p>用戶可使用指令創建支援單，自定義分類。</p>
-      </div>
-      <div class="card">
-        <h3>⚠ 安全系統</h3>
-        <p>檢查新用戶帳號年齡、使用者名稱與重複進出次數並主動防禦。</p>
-      </div>
-      <div class="card">
-        <h3>🎮 RPG多人遊戲</h3>
-        <p>可與其他玩家共同遊玩的文字RPG，也可自行開發模組遊玩。<br/><a href="rpg-development-document-v1.5.html">開發文檔(Latest)</a></p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="invite" class="cta">
-    <h2>準備好開始使用了嗎？</h2>
-    <button class="btn-primary" id="inviteBtnBottom">邀請小喵喵</button>
-    <button class="btn-primary" id="nyankohost">雲端貓居</button>
-  </section>
+    <section class="community">
+      <div class="container community-grid">
+        <iframe src="https://dctw.xyz/widget/b/1144161789832069141?theme=dark" title="小喵喵伺服器狀態" loading="lazy"
+          scrolling="no"></iframe>
+
+        <iframe src="https://dctw.xyz/widget/s/1061475265924038758?theme=dark" title="小喵喵社群資訊" loading="lazy"
+          scrolling="no"></iframe>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">FEATURES</span>
+          <h2>你需要的功能，都在這裡</h2>
+          <p>不堆疊複雜設定，只保留真正實用的功能。</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">01</div>
+            <h3>音樂系統</h3>
+            <p>支援 YouTube、Spotify、SoundCloud 等來源，享受輕鬆的語音頻道體驗。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">02</div>
+            <h3>分身機器人</h3>
+            <p>建立自己的分身機器人，並透過簡單的程式進行控制。</p>
+            <a href="fakebot-document.html">查看開發文檔 →</a>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">03</div>
+            <h3>黑名單系統</h3>
+            <p>透過共享黑名單協助伺服器降低危險使用者帶來的風險。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">04</div>
+            <h3>管理工具</h3>
+            <p>提供封鎖、審核紀錄等常用功能，讓管理工作更加集中。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">05</div>
+            <h3>客服單系統</h3>
+            <p>讓使用者快速建立支援單，並依照伺服器需求自訂分類。</p>
+          </article>
+          
+          <article class="feature-card">
+            <div class="feature-icon">06</div>
+            <h3>貼文系統</h3>
+            <p>讓使用者可以輕鬆建立匿名與討論串的貼文。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">07</div>
+            <h3>安全系統</h3>
+            <p>檢查新使用者的帳號資訊與異常行為，協助管理員降低風險。</p>
+          </article>
+
+          <article class="feature-card feature-card-wide">
+            <div class="feature-icon">08</div>
+            <div>
+              <h3>RPG 多人遊戲</h3>
+              <p>與其他玩家一起遊玩的文字 RPG，玩膩了也可以透過開發文檔自行製作模組。</p>
+              <a href="rpg-document.html">查看 RPG 開發文檔 →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback" class="section feedback-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">FEEDBACK</span>
+          <h2>來自使用者的回饋</h2>
+        </div>
+
+        <div class="feedback-grid">
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <div class="avatar">
+                  <img src="https://images-ext-1.discordapp.net/external/4PorktiHGBmKQOGruqdkGqk87f3igFtTkM14SnPvnps/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1340225178118000662/25836aeee5f87aa76a427d06342e6420.png?format=webp&quality=lossless" alt="使用者頭像">
+              </div>
+              <div>
+                <strong>creeperdev.me</strong>
+                <span>社群管理員</span>
+              </div>
+            </div>
+            <p>網站給到夯爆了 機器人也很好用，也期待群主女裝</p>
+          </article>
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <div class="avatar">
+                  <img src="https://images-ext-1.discordapp.net/external/-4fIVZwsuBxIRwLXqI_TkK-kMmHQayVOnKsjU_uP71k/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/964849855396741130/2c8fe38b969f480d52d789b4180abd3e.png?format=webp&quality=lossless" alt="使用者頭像">
+              </div>
+              <div>
+                <strong>kusanagi_akane</strong>
+                <span>貓貓超可愛開發者</span>
+              </div>
+            </div>
+            <p>開發者非常牛逼（除了偶爾會裝唐）喵喵也非常好用</p>
+          </article>
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <div class="avatar">
+                  <img src="https://images-ext-1.discordapp.net/external/2IodCbqxaSbYbit3bhqvq7t9Uc3GHZZKcQO2Nq4dFlE/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1117757230129889351/1f05686b1ae85751c6f5c4ebeae7b10c.png?format=webp&quality=lossless" alt="使用者頭像">
+              </div>
+              <div>
+                <strong>co2_tw</strong>
+                <span>AntiRaidX開發者</span>
+              </div>
+            </div>
+            <p>這款 Discord機器人解決了我好多平常管理伺服器的煩惱，真的是幫大忙了！</p>
+          </article>
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <div class="avatar">
+                  <img src="https://images-ext-1.discordapp.net/external/bJFIYJO_eOxHP-26ZZ0p_cgpztaC8VW1fDiTHQhtWEg/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1070621326148112435/2c8a31f57cc2083783dcec895f3a98fa.png?format=webp&quality=lossless" alt="使用者頭像">
+              </div>
+              <div>
+                <strong>oui_lonely_xl</strong>
+                <span>機器人使用者</span>
+              </div>
+            </div>
+            <p>日安，吾曰：「機好使，旦夕一日女裝Play。」（朝）</p>
+          </article>
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <div class="avatar">
+                  <img src="https://images-ext-1.discordapp.net/external/Plsk0BloXTC4nSVth_mk3Bjb8BTSyLqOHTsC2wMHP4w/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/852006773854306304/fcda7961605857bcb6edc3b45742f27b.png?format=webp&quality=lossless" alt="使用者頭像">
+              </div>
+              <div>
+                <strong>onion.tw</strong>
+                <span>TaskManager開發者</span>
+              </div>
+            </div>
+            <p>這機器人好用到我要再女裝一遍！</p>
+          </article>
+          <article class="feedback-card">
+            <div class="feedback-top">
+              <div class="avatar">
+                  <img src="https://images-ext-1.discordapp.net/external/r7lmgTbBTED7C5vQohZZR7ZNhlxGXIi2_ipp4VvIlsY/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/849221915856207895/63645f024b61b9c5e4445033ca82c15c.png?format=webp&quality=lossless" alt="使用者頭像">
+              </div>
+              <div>
+                <strong>nicko9487</strong>
+                <span>Yee開發者</span>
+              </div>
+            </div>
+            <p>非常好用除了開發者以外...</p>
+          </article>
+        </div>
+
+        <div class="feedback-note">
+          <span>✦</span>
+          想分享你的使用心得？加入支援社群吧！
+        </div>
+      </div>
+    </section>
+
+    <section id="invite" class="invite-section">
+      <div class="container">
+        <div class="invite-box">
+          <span class="eyebrow">GET STARTED</span>
+          <h2>準備好讓伺服器更簡單了嗎？</h2>
+          <p>邀請小喵喵，從你真正需要的功能開始。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://discord.com/oauth2/authorize?client_id=1144161789832069141">
+              邀請小喵喵
+            </a>
+            <a class="btn btn-secondary" href="https://dctw.xyz/servers/1404587685645123665">
+              前往雲端貓居
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2026 小喵喵 Discord Bot. All rights reserved.</p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <img src="style/cat.png" alt="小喵喵">
+        <div>
+          <strong>小喵喵</strong>
+          <span>Discord Bot</span>
+        </div>
+      </div>
+      <p>© 2026 小喵喵 Discord Bot. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script/redirect.js"></script>
+
+
 </body>
+
 </html>

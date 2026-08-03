@@ -11,9 +11,9 @@
   <meta property="og:title" content="小喵喵RPG模組文檔" />
   <meta property="og:description" content="小喵喵RPG開發者教學文檔" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="cat.png">
-  <link rel="icon" href="cat.png" type="image/x-icon" />
-  <!-- <img src="cat.png"> -->
+  <meta property="og:image" content="style/cat.pngat.png">
+  <link rel="icon" href="style/cat.png" type="image/x-icon" />
+  <!-- <img src="style/cat.png"> -->
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
@@ -24,14 +24,17 @@
   <header>
     <div class="container header-container">
       <div class="logo">
-          <img src="cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
+          <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
           <span style="margin-left: 8px; vertical-align: middle;">RPG模組文檔</span>
       </div>
       <nav>
         <ul>
           <li><a href="index.html">主頁面</a></li>
+          <li><a href="#defaultrules">遊戲基礎規則</a></li>
           <li><a href="#required">必填欄位</a></li>
           <li><a href="#optional">生物物品註冊</a></li>
+          <li><a href="#gen-rule">生物方塊生成規則</a></li>
+          <li><a href="#new-event">事件說明與註冊</a></li>
           <li><a href="#rules">驗證規則</a></li>
           <li><a href="#example">完整範例</a></li>
           <li><a href="rpg-development-document-changelog.html">RPG更新日誌</a></li>
@@ -42,7 +45,25 @@
 
   <section class="hero container">
     <!-- <h1>小喵喵RPG模組文檔</h1> -->
-    <p>本頁面說明小喵喵RPG模組JSON結構、必填與可選欄位，以及生物/方塊生成規則。<br>此版本為v1.3 請使用<a href="rpg-development-document-v1.5.html">最新版本</a></p>
+    <p>本頁面說明小喵喵RPG模組JSON結構、必填與可選欄位，以及生物/方塊生成規則。<br>此版本為v1.5-latest</p>
+
+  </section>
+
+  <section id="defaultrules" class="container">
+    <h2>遊戲基礎規則</h2>
+    <ul>
+      <li>一個區塊(Chunk)為10x10</li>
+      <li>地圖大小為70x70</li>
+      <li>視野大小為5x5</li>
+      <li>打獵計算公式：</li>
+      <table>
+        <tr><th>運用</th><th>型態</th><th>計算公式</th></tr>
+        <tr><td>玩家攻擊力</td><td>int</td><td>玩家等級 * 0.6 + 攻擊加成 * 1.6</td></tr>
+        <tr><td>隨機值</td><td>float</td><td>0.6 ~ 1.1</td></tr>
+        <tr><td>怪物血量</td><td>float</td><td>玩家等級 * 隨機值 ~ 隨機值 * 1.5</td></tr>
+      </table>
+      <li>開發模式並不會影響一般玩家的資料</a></li>
+    </ul>
   </section>
 
   <section id="required" class="container">
@@ -50,36 +71,36 @@
     <div class="code-block">
       <button class="copy-btn">複製</button>
       <pre><code>{
-      "info": {
-          "author": "Example",
-          "modname": "example",
-          "modversion": "1.0",
-          "dev-version": 1
-      },
-      "data": {
-          "animal": {},
-          "block": {},
-          "item": {}
-      },
-      "rule":{
-          "animal": {},
-          "block": {}
-      },
-      "type": []
-  }   </code></pre>
+    "info": {
+        "author": "Example",
+        "modname": "example",
+        "modversion": "1.0"
+    },
+    "data": {
+        "animal": {},
+        "block": {},
+        "item": {}
+    },
+    "rule":{
+        "animal": {},
+        "block": {}
+    },
+    "type": [],
+    "events": {}
+}</code></pre>
     </div>
     <table>
       <tr><th>欄位</th><th>型態</th><th>說明</th></tr>
       <tr><td>info.author</td><td>str</td><td>作者名稱</td></tr>
       <tr><td>info.modname</td><td>str</td><td>模組名稱</td></tr>
       <tr><td>info.modversion</td><td>str</td><td>模組版本</td></tr>
-      <tr><td>info.dev-version</td><td>int</td><td>模組開發使用版本</td></tr>
       <tr><td>data.animal</td><td>dict</td><td>生物資料</td></tr>
       <tr><td>data.block</td><td>dict</td><td>方塊資料</td></tr>
       <tr><td>data.item</td><td>dict</td><td>物品資料</td></tr>
       <tr><td>rule.animal</td><td>dict</td><td>生物生成規則</td></tr>
       <tr><td>rule.block</td><td>dict</td><td>方塊生成規則</td></tr>
-      <tr><td>type</td><td>list</td><td>類型註冊列表(預設內含default、food)</td></tr>
+      <tr><td>type</td><td>list</td><td>類型註冊列表(預設類型：default、food)</td></tr>
+      <tr><td>events</td><td>dict</td><td>事件註冊列表(預設事件請查看<a href="#new-event">事件說明與註冊</a>)</td></tr>
     </table>
   </section>
 
@@ -89,23 +110,20 @@
       <div class="card code-block">
         <h3>data.animal - 額外生物</h3>
         <button class="copy-btn">複製</button>
-        <pre><code>
-  "&lt;生物名稱&gt;": {
+        <pre><code>"&lt;生物名稱&gt;": {
     "hp": 10,
     "drops": ["&lt;掉落物&gt;"],
     "display-emoji": "&lt;emoji&gt;"
-  }
-        </code></pre>
+}</code></pre>
       </div>
       <div class="card code-block">
         <h3>data.block - 額外方塊</h3>
         <button class="copy-btn">複製</button>
-        <pre><code>
-  "&lt;方塊名稱&gt;": {
+        <pre><code>"&lt;方塊名稱&gt;": {
     "drops": ["&lt;掉落物&gt;"],
     "display-emoji": "&lt;emoji&gt;",
     "events": ["&lt;event&gt;"]
-  }
+}
         </code></pre>
       </div>
       <div class="card code-block">
@@ -113,15 +131,15 @@
         <button class="copy-btn">複製</button>
         <pre><code>"&lt;物品名稱&gt;": {
     "type": ["&lt;type&gt;"],
-      "gen": {
-        "health": &lt;回復血量&gt;,
-        "cooked": &lt;是否烹煮&gt;,
-      },
-      "trade": {
-        "sold": &lt;賣出價格&gt;,
-        "buy": &lt;買入價格&gt;
+        "gen": {
+            "health": &lt;回復血量&gt;,
+            "cooked": &lt;是否烹煮&gt;,
+        },
+        "trade": {
+            "sold": &lt;賣出價格&gt;,
+            "buy": &lt;買入價格&gt;
       }
-  }</code></pre>
+}</code></pre>
       </div>
     </div>
     <table>
@@ -142,32 +160,29 @@
     </table>
   </section>
 
+
   <section id="gen-rule" class="container">
     <h2>生物方塊生成規則</h2>
     <div class="grid">
       <div class="card code-block">
         <h3>rule.animal</h3>
         <button class="copy-btn">複製</button>
-        <pre><code>
-  "&lt;生物名稱&gt;": {
-      "chunk": {
-          "max":&lt;區塊最多生成數量&gt;
-      },
+        <pre><code>"&lt;生物名稱&gt;": {
+    "chunk": {
+        "max": &lt;區塊最多生成數量&gt;
+    },
     "type": ["&lt;type&gt;"]
-  }
-        </code></pre>
+}</code></pre>
       </div>
       <div class="card code-block">
         <h3>rule.block</h3>
         <button class="copy-btn">複製</button>
-        <pre><code>
-  "&lt;方塊名稱&gt;": {
-      "chunk": {
-          "max":&lt;區塊最多生成數量&gt;
-      },
-      "type": ["&lt;type&gt;"]
-  }
-        </code></pre>
+        <pre><code>"&lt;方塊名稱&gt;": {
+    "chunk": {
+        "max": &lt;區塊最多生成數量&gt;
+    },
+    "type": ["&lt;type&gt;"]
+}</code></pre>
       </div>
     </div>
     <table>
@@ -181,12 +196,35 @@
     </table>
   </section>
 
+  <section id="new-event" class="container">
+    <h2>事件說明與註冊</h2>
+    <div class="grid">
+      <div class="card code-block">
+        <h3>events</h3>
+        <button class="copy-btn">複製</button>
+        <pre><code>"events": {
+    "&lt;事件名稱&gt;": {
+        "core": "&lt;核心事件&gt;"
+    }
+}</code></pre>
+      </div>
+    </div>
+    <table>
+      <tr><th>欄位</th><th>型態</th><th>說明</th></tr>
+      <tr><td>&lt;事件名稱&gt;.core</td><td>str</td><td>引用核心事件：de-health或in-health</td></tr>
+      <tr><td>預設事件</td><td>str</td><td>不須註冊即可使用的預設事件：explode、hurt、recover</td></tr>
+      <tr><td>core</td><td>str</td><td>de-health、in-health請則一輸入 &lt;事件名稱&gt;.core 使用</td></tr>
+    </table>
+  </section>
+
   <section id="rules" class="container">
     <h2>驗證規則</h2>
     <ul>
-      <li>請加入支援伺服器或邀請機器人後使用>>dev-explore附帶模組檔案即可測試</li>
+      <li>請加入支援伺服器或邀請機器人後使用>>dev-explore附帶模組檔案</li>
+      <li>>>dev-explore需帶有參數 &lt;玩家等級&gt;(int) 和 &lt;攻擊加成&gt;(int)</li>
       <li>必填欄位必須存在，型態符合<a href="#required">必填欄位</a></li>
       <li>可選欄位若存在，型態必須符合<a href="#optional">生物物品註冊</a></li>
+      <li>若使用非預設事件需進行註冊與引用核心<a href="#new-event">事件說明與註冊</a></li>
       <li>data 中的生物、方塊必須對應 rule 中的<a href="#gen-rule">生成規則</a></li>
       <li>rule 中的生物、方塊必須在 data 中有資料反之亦然</li>
       <li>若缺少 hp、drops、display-emoji 等關鍵欄位就會報錯，若出現沒有的屬性則會出現警告</li>
@@ -199,38 +237,43 @@
       <button class="copy-btn">複製</button>
       <pre><code>{
     "info": {
-      "author": "command_cat",
-      "modname": "Example",
-      "modversion": "1.1",
-      "dev-version": 1
+        "author": "command_cat",
+        "modname": "Example",
+        "modversion": "1.1"
     },
     "data": {
-      "animal": {
-        "cat": {
-          "hp": 10,
-          "drops": ["bone"],
-          "display-emoji": "🐱"
+        "animal": {
+          "cat": {
+              "hp": 10,
+              "drops": ["bone"],
+              "display-emoji": "🐱"
+          },
+          "dog": {
+              "hp": 12,
+              "drops": ["bone"],
+              "display-emoji": "🐶"
+          },
+          "fox": {
+              "hp": 8,
+              "drops": ["apple"],
+              "display-emoji": "🦊"
+          }
         },
-        "dog": {
-          "hp": 12,
-          "drops": ["bone"],
-          "display-emoji": "🐶"
-        },
-        "fox": {
-          "hp": 8,
-          "drops": ["apple"],
-          "display-emoji": "🦊"
-        }
-      },
       "block": {
         "tnt": {
           "drops": ["tnt"],
-          "display-emoji": "🧨",
+          "display-emoji": "💣",
           "events": ["explode"]
+        },
+        "blackhole": {
+          "drops": [],
+          "display-emoji": "⚫",
+          "events": ["fall"]
         },
         "soil": {
           "drops": [],
-          "display-emoji": "🟫"
+          "display-emoji": "🟫",
+          "events": []
         }
       },
       "item": {
@@ -263,6 +306,14 @@
             "sold": 10,
             "buy": 5
           }
+        },
+        "tnt": {
+          "type": ["danger"],
+          "gen": {},
+          "trade": {
+            "sold": 40,
+            "buy": 45
+          }
         }
       }
     },
@@ -288,11 +339,17 @@
         }
       },
       "block": {
-        "stone": {
+        "tnt": {
           "chunk": {
-            "max": 3
+            "max": 2
           },
-          "type": ["default"]
+          "type": ["danger"]
+        },
+        "blackhole": {
+          "chunk": {
+            "max": 2
+          },
+          "type": ["danger"]
         },
         "soil": {
           "chunk": {
@@ -302,7 +359,12 @@
         }
       }
     },
-    "type": ["normal"]
+    "type": ["normal", "danger"],
+    "events": {
+      "fall": {
+        "core": "de-health"
+      }
+    }
   }</code></pre>
     </div>
   </section>

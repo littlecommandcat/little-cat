@@ -1,47 +1,56 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 - 找不到頁面 | 小喵喵</title>
-  
-  <link rel="icon" href="cat.png" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="style/index.css">
-  <link rel="stylesheet" type="text/css" href="style/404.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 找不到頁面 | 小喵喵</title>
+    <meta name="description" content="找不到這個頁面，小喵喵帶你回到首頁。">
+
+
+<link rel="icon" href="style/cat.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/index.css">
+<link rel="stylesheet" href="style/404.css">
+
+
 </head>
+
 <body>
+    <header>
+        <div class="container header-container">
+            <a class="logo" href="index.html">
+                <img src="style/cat.png" alt="小喵喵 Logo">
+                <span>小喵喵</span>
+            </a>
 
-  <header>
-    <div class="container header-container">
-      <div class="logo">
-        <img src="cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
-        <span style="margin-left: 8px; vertical-align: middle;">小喵喵</span>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">返回首頁</a></li>
-        </ul>
-      </nav>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">返回首頁</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <section class="hero error-hero">
+<main class="hero error-hero">
     <div class="container">
-      <img src="cat.png" alt="404 Cat" class="error-img">
-      <h1 class="error-code">404</h1>
-      <h2>找不到路徑喵！</h2>
-      <p>這個頁面不存在！</p>
-      
-      <div class="back-home">
-        <button class="btn-primary" onclick="window.location.href='index.html'">回到首頁</button>
-      </div>
-    </div>
-  </section>
+        <img src="style/cat.png" alt="小喵喵" class="error-img">
 
-  <footer>
+        <h1 class="error-code">404</h1>
+        <h2>找不到路徑喵！</h2>
+        <p>這個頁面不存在，可能已經被移除或網址輸入錯誤。</p>
+
+        <div class="back-home">
+            <a class="btn-primary" href="index.html">回到首頁</a>
+        </div>
+    </div>
+</main>
+
+<footer>
     <p>© 2026 小喵喵 Discord Bot. All rights reserved.</p>
-  </footer>
+</footer>
+
 
 </body>
 </html>
