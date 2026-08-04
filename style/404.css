@@ -130,10 +130,9 @@ nav a:hover {
     border: 0;
     border-radius: 5px;
     color: #151515;
-    background: #d7b98e;
     font: inherit;
     font-size: .90rem;
-    font-weight: 400;
+    font-weight: 500;
     cursor: pointer;
     transition: background .2s, transform .2s;
 }
