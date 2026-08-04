@@ -1,0 +1,310 @@
+.command-hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #18191b, #222326);
+}
+
+.command-hero h1 {
+    margin: 12px 0 18px;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+}
+
+.command-hero p {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #66ffcc;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.command-search {
+    max-width: 560px;
+    margin: 35px auto 0;
+}
+
+.command-search input {
+    width: 100%;
+    padding: 15px 18px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 9px;
+    outline: none;
+    background: #151617;
+    color: #fff;
+    font: inherit;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.command-search input:focus {
+    border-color: #66ffcc;
+    box-shadow: 0 0 0 3px rgba(102, 255, 204, .08);
+}
+
+.commands-section,
+.usage-section,
+.permissions-section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    margin: 8px 0 10px;
+    font-size: 2rem;
+}
+
+.section-heading p {
+    color: #999;
+}
+
+.command-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.command-card {
+    background: #1b1c1e;
+    border: 1px solid #303236;
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform .2s, border-color .2s, background .2s;
+}
+
+.command-card:hover {
+    transform: translateY(-3px);
+    border-color: #45484d;
+    background: #1e2022;
+}
+
+.command-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.command-category {
+    display: block;
+    margin-bottom: 7px;
+    color: #888;
+    font-size: .75rem;
+}
+
+.command-header h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.command-description {
+    margin: 20px 0;
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.copy-command {
+    flex-shrink: 0;
+    padding: 7px 12px;
+    border: 1px solid #36383b;
+    border-radius: 7px;
+    background: #151617;
+    color: #aaa;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.copy-command:hover {
+    border-color: #66ffcc;
+    color: #66ffcc;
+}
+
+.command-block {
+    margin-top: 14px;
+}
+
+.command-block span {
+    display: block;
+    margin-bottom: 7px;
+    color: #777;
+    font-size: .8rem;
+}
+
+.command-block code {
+    display: block;
+    padding: 12px 14px;
+    overflow-x: auto;
+    border: 1px solid #2d2f32;
+    border-radius: 7px;
+    background: #121314;
+    color: #66ffcc;
+    font-family: Consolas, monospace;
+}
+
+.command-arguments {
+    margin-top: 14px;
+    border-top: 1px solid #2b2d30;
+}
+
+.argument {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #2b2d30;
+}
+
+.argument code {
+    color: #66ffcc;
+}
+
+.argument span {
+    color: #888;
+    font-size: .9rem;
+    text-align: right;
+}
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.usage-card {
+    padding: 25px;
+    background: #1b1c1e;
+    border: 1px solid #303236;
+    border-radius: 12px;
+}
+
+.usage-number {
+    color: #66ffcc;
+    font-family: Consolas, monospace;
+    font-size: .85rem;
+}
+
+.usage-card h3 {
+    margin: 15px 0 10px;
+}
+
+.usage-card p {
+    color: #999;
+    line-height: 1.7;
+}
+
+.permissions-section {
+    background: #171819;
+}
+
+.info-card {
+    padding: 35px;
+    background: #1b1c1e;
+    border: 1px solid #303236;
+    border-radius: 12px;
+}
+
+.info-card h2 {
+    margin: 10px 0;
+}
+
+.info-card>p {
+    color: #999;
+    line-height: 1.7;
+}
+
+.permission-list {
+    margin-top: 25px;
+}
+
+.permission-list div {
+    padding: 17px 0;
+    border-top: 1px solid #303236;
+}
+
+.permission-list strong,
+.permission-list span {
+    display: block;
+}
+
+.permission-list strong {
+    margin-bottom: 5px;
+}
+
+.permission-list span {
+    color: #888;
+    font-size: .9rem;
+}
+
+.command-footer {
+    padding: 90px 0;
+}
+
+.command-footer-box {
+    padding: 60px 30px;
+    text-align: center;
+    background: #1b1c1e;
+    border: 1px solid #303236;
+    border-radius: 14px;
+}
+
+.command-footer-box h2 {
+    margin: 10px 0;
+}
+
+.command-footer-box p {
+    margin-bottom: 25px;
+    color: #999;
+}
+
+.no-results {
+    display: none;
+    padding: 40px;
+    text-align: center;
+    color: #777;
+}
+
+@media (max-width: 760px) {
+    .command-hero {
+        padding: 75px 0 60px;
+    }
+
+
+    .commands-section,
+    .usage-section,
+    .permissions-section,
+    .command-footer {
+        padding: 65px 0;
+    }
+
+    .command-list,
+    .usage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .command-header {
+        gap: 12px;
+    }
+
+    .argument {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .argument span {
+        text-align: left;
+    }
+
+    .info-card {
+        padding: 25px;
+    }
+
+
+}
