@@ -5,19 +5,30 @@ const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
 if (menuToggle && mainNav) {
+    const closeMenu = () => {
+        mainNav.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "開啟選單");
+    };
+
     menuToggle.addEventListener("click", () => {
         const isOpen = mainNav.classList.toggle("open");
 
         document.body.classList.toggle("menu-open", isOpen);
         menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "關閉選單" : "開啟選單");
     });
 
     mainNav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            mainNav.classList.remove("open");
-            document.body.classList.remove("menu-open");
-            menuToggle.setAttribute("aria-expanded", "false");
-        });
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && mainNav.classList.contains("open")) {
+            closeMenu();
+            menuToggle.focus();
+        }
     });
 }
 
@@ -42,6 +53,16 @@ function navigate(url) {
 }
 
 const sections = document.querySelectorAll("section");
+
+document.querySelectorAll(".avatar img").forEach(image => {
+    const useFallback = () => image.remove();
+
+    if (image.complete && image.naturalWidth === 0) {
+        useFallback();
+    } else {
+        image.addEventListener("error", useFallback, { once: true });
+    }
+});
 
 if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(entries => {

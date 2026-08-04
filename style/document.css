@@ -3,7 +3,7 @@ body {
     padding: 0;
     background: #111214;
     color: #e4e5e7;
-    font-family: "Noto Sans TC", sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     line-height: 1.7;
 }
 

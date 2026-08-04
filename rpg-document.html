@@ -12,24 +12,27 @@
   <meta property="og:title" content="小喵喵RPG模組文檔" />
   <meta property="og:description" content="小喵喵RPG開發者教學文檔" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="style/cat.pngat.png">
+  <meta property="og:image" content="style/cat.png">
   <link rel="icon" href="style/cat.png" type="image/x-icon" />
   <!-- <img src="style/cat.png"> -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="style/index.css">
   <link rel="stylesheet" type="text/css" href="style/document.css">
+  <link rel="stylesheet" type="text/css" href="style/responsive.css">
 </head>
 
 <body>
 
-  <header>
+  <header class="document-header">
     <div class="container header-container">
       <div class="logo">
         <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
         <span style="margin-left: 8px; vertical-align: middle;">RPG模組文檔</span>
       </div>
-      <nav>
+      <button class="document-menu-toggle" type="button" aria-label="開啟章節選單" aria-controls="documentNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="documentNav">
         <ul>
           <li><a href="index.html">主頁面</a></li>
           <li><a href="#defaultrules">遊戲基礎規則</a></li>
@@ -39,7 +42,6 @@
           <li><a href="#new-event">事件說明與註冊</a></li>
           <li><a href="#rules">驗證規則</a></li>
           <li><a href="#example">完整範例</a></li>
-          <li><a href="rpg-development-document-changelog.html">RPG更新日誌</a></li>
         </ul>
       </nav>
     </div>
@@ -80,7 +82,7 @@
           <td>玩家等級 * 隨機值 ~ 隨機值 * 1.5</td>
         </tr>
       </table>
-      <li>開發模式並不會影響一般玩家的資料</a></li>
+      <li>開發模式並不會影響一般玩家的資料</li>
     </ul>
   </section>
 
@@ -542,6 +544,7 @@
   </footer>
 
   <script src="script/copy.js"></script>
+  <script src="script/document-nav.js"></script>
 
 </body>
 

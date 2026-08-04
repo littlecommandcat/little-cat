@@ -14,20 +14,23 @@
   <meta property="og:image" content="style/cat.png">
   <link rel="icon" href="style/cat.png" type="image/x-icon" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="style/index.css">
   <link rel="stylesheet" type="text/css" href="style/document.css">
+  <link rel="stylesheet" type="text/css" href="style/responsive.css">
 </head>
 
 <body>
-  <header>
+  <header class="document-header">
 
     <div class="container header-container">
       <div class="logo">
         <img src="style/cat.png" alt="小喵喵 Logo" style="height: 40px; vertical-align: middle;">
         <span style="margin-left: 8px; vertical-align: middle;">分身機器人文檔</span>
       </div>
-      <nav>
+      <button class="document-menu-toggle" type="button" aria-label="開啟章節選單" aria-controls="documentNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="documentNav">
         <ul>
           <li><a href="index.html">主頁面</a></li>
           <li><a href="#syntax">核心語法</a></li>
@@ -189,7 +192,6 @@ end;</code></pre>
   val3 = abs{-5}; // 取數值之絕對值
   output {}; // 必要輸出
 end;</code></pre>
-    </div>
     </div>
 
     <div class="warning-card">
@@ -562,6 +564,7 @@ end;</code></pre>
 
   <script src="script/redirect.js"></script>
   <script src="script/copy.js"></script>
+  <script src="script/document-nav.js"></script>
 </body>
 
 </html>
