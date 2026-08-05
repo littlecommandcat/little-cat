@@ -19,6 +19,7 @@
   <link rel="icon" href="style/cat.png" type="image/x-icon">
   <link rel="stylesheet" href="style/index.css">
   <link rel="stylesheet" href="style/responsive.css">
+  <link rel="stylesheet" href="style/feedback.css">
 
 
 </head>
@@ -40,7 +41,7 @@
 
       <nav id="mainNav">
         <a href="#features">功能</a>
-        <a href="#feedback">用戶評價</a>
+        <a href="#user-feedback">用戶評價</a>
         <a href="commands.html">指令教學</a>
         <a href="bot-terms.html">條款政策</a>
         <a href="rpg-document.html">RPG 文檔</a>
@@ -160,113 +161,140 @@
       </div>
     </section>
 
-    <section id="feedback" class="section feedback-section">
+    <section id="user-feedback" class="section feedback-section">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">FEEDBACK</span>
-          <h2>來自使用者的回饋</h2>
+          <h2>使用者回饋</h2>
         </div>
 
-        <div class="feedback-grid">
-          <article class="feedback-card">
-            <div class="feedback-top">
-              <div class="avatar">
-                <img
-                  src="https://images-ext-1.discordapp.net/external/4PorktiHGBmKQOGruqdkGqk87f3igFtTkM14SnPvnps/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1340225178118000662/25836aeee5f87aa76a427d06342e6420.png?format=webp&quality=lossless"
-                  alt="使用者頭像">
+        <div class="feedback-slider">
+          <button class="feedback-arrow feedback-prev" type="button" aria-label="上一則">
+            ‹
+          </button>
+
+          <div class="feedback-grid" id="feedbackGrid">
+
+            <article class="feedback-card">
+              <div class="feedback-top">
+                <div class="avatar">
+                  <img
+                    src="https://images-ext-1.discordapp.net/external/4PorktiHGBmKQOGruqdkGqk87f3igFtTkM14SnPvnps/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1340225178118000662/25836aeee5f87aa76a427d06342e6420.png?format=webp&quality=lossless"
+                    alt="使用者頭像">
+                </div>
+                <div>
+                  <strong>creeperdev.me</strong>
+                  <span>社群管理員</span>
+                </div>
               </div>
-              <div>
-                <strong>creeperdev.me</strong>
-                <span>社群管理員</span>
+
+              <p>網站給到夯爆了 機器人也很好用，也期待群主女裝</p>
+            </article>
+
+            <article class="feedback-card">
+              <div class="feedback-top">
+                <div class="avatar">
+                  <img
+                    src="https://images-ext-1.discordapp.net/external/-4fIVZwsuBxIRwLXqI_TkK-kMmHQayVOnKsjU_uP71k/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/964849855396741130/2c8fe38b969f480d52d789b4180abd3e.png?format=webp&quality=lossless"
+                    alt="使用者頭像">
+                </div>
+                <div>
+                  <strong>kusanagi_akane</strong>
+                  <span>貓貓超可愛開發者</span>
+                </div>
               </div>
-            </div>
-            <p>網站給到夯爆了 機器人也很好用，也期待群主女裝</p>
-          </article>
-          <article class="feedback-card">
-            <div class="feedback-top">
-              <div class="avatar">
-                <img
-                  src="https://images-ext-1.discordapp.net/external/-4fIVZwsuBxIRwLXqI_TkK-kMmHQayVOnKsjU_uP71k/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/964849855396741130/2c8fe38b969f480d52d789b4180abd3e.png?format=webp&quality=lossless"
-                  alt="使用者頭像">
+
+              <p>開發者非常牛逼（除了偶爾會裝唐）喵喵也非常好用</p>
+            </article>
+
+            <article class="feedback-card">
+              <div class="feedback-top">
+                <div class="avatar">
+                  <img
+                    src="https://images-ext-1.discordapp.net/external/2IodCbqxaSbYbit3bhqvq7t9Uc3GHZZKcQO2Nq4dFlE/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1117757230129889351/1f05686b1ae85751c6f5c4ebeae7b10c.png?format=webp&quality=lossless"
+                    alt="使用者頭像">
+                </div>
+                <div>
+                  <strong>co2_tw</strong>
+                  <span>AntiRaidX開發者(自稱不知名開發者)</span>
+                </div>
               </div>
-              <div>
-                <strong>kusanagi_akane</strong>
-                <span>貓貓超可愛開發者</span>
+
+              <p>這款 Discord機器人解決了我好多平常管理伺服器的煩惱，真的是幫大忙了！</p>
+            </article>
+
+            <article class="feedback-card">
+              <div class="feedback-top">
+                <div class="avatar">
+                  <img
+                    src="https://images-ext-1.discordapp.net/external/bJFIYJO_eOxHP-26ZZ0p_cgpztaC8VW1fDiTHQhtWEg/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1070621326148112435/2c8a31f57cc2083783dcec895f3a98fa.png?format=webp&quality=lossless"
+                    alt="使用者頭像">
+                </div>
+                <div>
+                  <strong>oui_lonely_xl</strong>
+                  <span>機器人使用者</span>
+                </div>
               </div>
-            </div>
-            <p>開發者非常牛逼（除了偶爾會裝唐）喵喵也非常好用</p>
-          </article>
-          <article class="feedback-card">
-            <div class="feedback-top">
-              <div class="avatar">
-                <img
-                  src="https://images-ext-1.discordapp.net/external/2IodCbqxaSbYbit3bhqvq7t9Uc3GHZZKcQO2Nq4dFlE/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1117757230129889351/1f05686b1ae85751c6f5c4ebeae7b10c.png?format=webp&quality=lossless"
-                  alt="使用者頭像">
+
+              <p>日安，吾曰：「機好使，旦夕一日女裝Play。」（朝）</p>
+            </article>
+
+            <article class="feedback-card">
+              <div class="feedback-top">
+                <div class="avatar">
+                  <img
+                    src="https://images-ext-1.discordapp.net/external/Plsk0BloXTC4nSVth_mk3Bjb8BTSyLqOHTsC2wMHP4w/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/852006773854306304/fcda7961605857bcb6edc3b45742f27b.png?format=webp&quality=lossless"
+                    alt="使用者頭像">
+                </div>
+                <div>
+                  <strong>onion.tw</strong>
+                  <span>TaskManager開發者</span>
+                </div>
               </div>
-              <div>
-                <strong>co2_tw</strong>
-                <span>AntiRaidX開發者</span>
+
+              <p>這機器人好用到我要再女裝一遍！</p>
+            </article>
+
+            <article class="feedback-card">
+              <div class="feedback-top">
+                <div class="avatar">
+                  <img
+                    src="https://images-ext-1.discordapp.net/external/r7lmgTbBTED7C5vQohZZR7ZNhlxGXIi2_ipp4VvIlsY/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/849221915856207895/63645f024b61b9c5e4445033ca82c15c.png?format=webp&quality=lossless"
+                    alt="使用者頭像">
+                </div>
+                <div>
+                  <strong>nicko9487</strong>
+                  <span>Yee開發者(自稱馬眼破壞者)</span>
+                </div>
               </div>
-            </div>
-            <p>這款 Discord機器人解決了我好多平常管理伺服器的煩惱，真的是幫大忙了！</p>
-          </article>
-          <article class="feedback-card">
-            <div class="feedback-top">
-              <div class="avatar">
-                <img
-                  src="https://images-ext-1.discordapp.net/external/bJFIYJO_eOxHP-26ZZ0p_cgpztaC8VW1fDiTHQhtWEg/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1070621326148112435/2c8a31f57cc2083783dcec895f3a98fa.png?format=webp&quality=lossless"
-                  alt="使用者頭像">
+
+              <p>非常好用除了開發者以外...</p>
+            </article>
+
+            <article class="feedback-card">
+              <div class="feedback-top">
+                <div class="avatar">
+                  <img
+                    src="https://images-ext-1.discordapp.net/external/orLZLuwyfIE5zKvseJQNLR4tysZvetoLhujBBfCiJBs/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/747071881169076264/14e6d55a15ace212ff8dd48ce122ae23.png?format=webp&quality=lossless"
+                    alt="使用者頭像">
+                </div>
+                <div>
+                  <strong>krick_tw</strong>
+                  <span>大薯(自稱眼終結者)</span>
+                </div>
               </div>
-              <div>
-                <strong>oui_lonely_xl</strong>
-                <span>機器人使用者</span>
-              </div>
-            </div>
-            <p>日安，吾曰：「機好使，旦夕一日女裝Play。」（朝）</p>
-          </article>
-          <article class="feedback-card">
-            <div class="feedback-top">
-              <div class="avatar">
-                <img
-                  src="https://images-ext-1.discordapp.net/external/Plsk0BloXTC4nSVth_mk3Bjb8BTSyLqOHTsC2wMHP4w/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/852006773854306304/fcda7961605857bcb6edc3b45742f27b.png?format=webp&quality=lossless"
-                  alt="使用者頭像">
-              </div>
-              <div>
-                <strong>onion.tw</strong>
-                <span>TaskManager開發者</span>
-              </div>
-            </div>
-            <p>這機器人好用到我要再女裝一遍！</p>
-          </article>
-          <article class="feedback-card">
-            <div class="feedback-top">
-              <div class="avatar">
-                <img
-                  src="https://images-ext-1.discordapp.net/external/r7lmgTbBTED7C5vQohZZR7ZNhlxGXIi2_ipp4VvIlsY/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/849221915856207895/63645f024b61b9c5e4445033ca82c15c.png?format=webp&quality=lossless"
-                  alt="使用者頭像">
-              </div>
-              <div>
-                <strong>nicko9487</strong>
-                <span>Yee開發者(自稱馬眼破壞者)</span>
-              </div>
-            </div>
-            <p>非常好用除了開發者以外...</p>
-          </article>
-          <article class="feedback-card">
-            <div class="feedback-top">
-              <div class="avatar">
-                <img
-                  src="https://images-ext-1.discordapp.net/external/orLZLuwyfIE5zKvseJQNLR4tysZvetoLhujBBfCiJBs/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/747071881169076264/14e6d55a15ace212ff8dd48ce122ae23.png?format=webp&quality=lossless"
-                  alt="使用者頭像">
-              </div>
-              <div>
-                <strong>krick_tw</strong>
-                <span>大薯(自稱眼終結者)</span>
-              </div>
-            </div>
-            <p>這機器人好用到我想幫開發者報名選美，順便逼他穿女裝！(永支永支</p>
-          </article>
+
+              <p>這機器人好用到我想幫開發者報名選美，順便逼他穿女裝！(永支永支</p>
+            </article>
+
+          </div>
+
+          <button class="feedback-arrow feedback-next" type="button" aria-label="下一則">
+            ›
+          </button>
         </div>
+
+        <div class="feedback-dots" id="feedbackDots"></div>
 
         <div class="feedback-note">
           <span>✦</span>
@@ -274,6 +302,88 @@
         </div>
       </div>
     </section>
+
+
+    <section id="communities" class="section communities-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">COMMUNITIES</span>
+          <h2>合作使用社群</h2>
+        </div>
+
+        <div class="community-grid">
+
+          <a class="community-card" href="https://discord.gg/2hMVBxuBrQ" target="_blank" rel="noopener">
+            <div class="community-avatar">
+              <img
+                src="https://images-ext-1.discordapp.net/external/OgGgU-VohPA0neVQGMlhp8_g4aHBS8RUyHo3u4w75Jk/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1061475265924038758/1fe6fd62166ff9bd236833609f9b776d.png?format=webp&quality=lossless"
+                alt="喵喵的窩">
+            </div>
+
+            <strong>喵喵的窩</strong>
+            <span>900+ 成員</span>
+          </a>
+
+          <a class="community-card" href="https://discord.gg/earthonlinetw" target="_blank" rel="noopener">
+            <div class="community-avatar">
+              <img
+                src="https://images-ext-1.discordapp.net/external/r5UokAnyCgdHQjRKCJKeNq0rptTIXwhKZH1-Bic_9yM/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1417448842223161446/e5c598715ef9947666d8628e6521dc6b.png?format=webp&quality=lossless"
+                alt="地球 Online 台服玩家交流區">
+            </div>
+            <strong>地球 Online 台服玩家交流區</strong>
+            <span>20000+成員</span>
+          </a>
+
+          <a class="community-card" href="https://dctw.xyz/support" target="_blank" rel="noopener">
+            <div class="community-avatar">
+              <img src="https://dctw.xyz/icon.png" alt="DCTW 官方支援社群">
+            </div>
+            <strong>DCTW 官方支援社群</strong>
+            <span>800+成員</span>
+          </a>
+
+          <a class="community-card" href="https://dctw.xyz/invite/s/1028557693801209871/" target="_blank"
+            rel="noopener">
+            <div class="community-avatar">
+              <img src="https://bot.taicoolah.com/icon.png" alt="Task Manager 官方支援社群">
+            </div>
+            <strong>Task Manager 官方支援社群</strong>
+            <span>1300+成員</span>
+          </a>
+
+          <a class="community-card" href="https://discord.gg/Ba6kejMJ6N" target="_blank" rel="noopener">
+            <div class="community-avatar">
+              <img src="https://cathome.shop/bot/photo/icon-160.webp" alt="貓貓的家">
+            </div>
+            <strong>貓貓的家</strong>
+            <span>1700+成員</span>
+          </a>
+
+          <a class="community-card" href="https://discord.gg/xNFpR9PgSP" target="_blank" rel="noopener">
+            <div class="community-avatar">
+              <img
+                src="https://cdn.discordapp.com/icons/1250867666865098833/be5561da60e5460984966b2c8abb4164.png"
+                alt="Frog Community">
+              </div>
+              <strong>Frog Community</strong>
+            <span>300+成員</span>
+          </a>
+          
+          <!-- modal card -->
+          <!-- <a class="community-card" href="https://discord.gg/xNFpR9PgSP" target="_blank" rel="noopener">
+            <div class="community-avatar">
+              <img
+                src="https://cdn.discordapp.com/icons/1250867666865098833/be5561da60e5460984966b2c8abb4164.png"
+                alt="Frog Community">
+              </div>
+              <strong>Frog Community</strong>
+            <span>300+成員</span>
+          </a> -->
+
+        </div>
+      </div>
+    </section>
+
 
     <section id="invite" class="invite-section">
       <div class="container">
@@ -308,7 +418,7 @@
   </footer>
 
   <script src="script/redirect.js"></script>
-
+  <script src="script/feedback.js"></script>
 
 </body>
 
