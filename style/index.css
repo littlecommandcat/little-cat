@@ -689,6 +689,15 @@ nav .nav-invite:hover {
   font-size: .78rem;
 }
 
+.community-count {
+  margin-bottom: 2px;
+}
+
+.community-online {
+  color: var(--accent);
+  font-size: .76rem;
+}
+
 /* Invite */
 
 .invite-section {
@@ -780,6 +789,38 @@ footer p {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
+}
+
+.discord-widget-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.widget-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #57f287;
+}
+
+.widget-dot-error {
+  background: #ed4245;
+}
+
+.widget-label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.widget-online {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: .85rem;
 }
 
 .discord-widget iframe {
